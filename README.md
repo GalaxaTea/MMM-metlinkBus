@@ -9,3 +9,4 @@
 *Configs:*
 - stopId = The id number of the stop that will be displayed
 - apiKey = The api key that will be used to request bus times from Metlink
+- displayedStops = Number of stops that will be displayed

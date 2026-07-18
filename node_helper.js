@@ -12,7 +12,7 @@ module.exports = NodeHelper.create({
   },
 
   fetchBusTimes: async function (payload) {
-    const url = "https://api.opendata.metlink.org.nz/v1/stop-predictions?stop_id=" + payload.stopId + "&limit=3";
+    const url = "https://api.opendata.metlink.org.nz/v1/stop-predictions?stop_id=" + payload.stopId + "&limit=" + payload.displayedStops;
 
     try {
       const response = await fetch(url, {

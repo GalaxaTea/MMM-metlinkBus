@@ -7,7 +7,8 @@ Module.register("metlinkBus", {
   // Default configs
   defaults: {
     stopId: "6000", // Wellington bus interchange
-    apiKey: ""
+    apiKey: "",
+    displayedStops: "5"
   },
 
   start: function () {
@@ -20,7 +21,8 @@ Module.register("metlinkBus", {
   getData: function () {
     this.sendSocketNotification("GET_BUS_TIMES", {
       stopId: this.config.stopId,
-      apiKey: this.config.apiKey
+      apiKey: this.config.apiKey,
+      displayedStops: this.config.displayedStops
     });
   },
 

@@ -1,0 +1,80 @@
+.metlinkBus-table {
+  border-collapse: collapse;
+}
+
+.metlinkBus-row {
+  height: 40px;
+}
+
+/* the circle marking each stop */
+.metlinkBus-dot-cell {
+  position: relative;
+  width: 20px;
+}
+
+.metlinkBus-dot {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+}
+
+.metlinkBus-dot-cell::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: -40px;
+  left: 50%;
+  width: 2px;
+  background-color: #555555;
+  transform: translateX(-50%);
+}
+
+/* first stop: line should only go downward, not above the dot */
+.metlinkBus-row:first-child .metlinkBus-dot-cell::before {
+  top: 50%;
+}
+
+.metlinkBus-row:last-child .metlinkBus-dot-cell::before {
+  display: none;
+}
+
+/* the connecting line, drawn once per row, stretching to the next row */
+.metlinkBus-dot-cell::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: -40px; /* reaches into the next row's height, closing the gap */
+  left: 50%;
+  width: 2px;
+  background-color: #555555;
+  transform: translateX(-50%);
+}
+
+/* don't draw a line hanging off the last stop */
+.metlinkBus-row:last-child .metlinkBus-dot-cell::before {
+  display: none;
+}
+
+.metlinkBus-route {
+  font-weight: bold;
+  padding-right: 12px;
+}
+
+.metlinkBus-destination {
+  padding-right: 12px;
+}
+
+.metlinkBus-time {
+  font-weight: bold;
+  text-align: right;
+  padding-right: 8px;
+}
+
+.metlinkBus-clock {
+  text-align: right;
+}

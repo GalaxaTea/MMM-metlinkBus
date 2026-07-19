@@ -12,7 +12,8 @@
 - displayedStops = Number of stops that will be displayed
 
 **Add this to MagicMirror config**
-``{
+```
+{
   module: "metlinkBus",
   position: "top_right",
   config: {
@@ -21,4 +22,5 @@
   displayedStops: "",
   showTimeUntil: true,
   showClockTime: false,
-},``
+},
+```

@@ -31,3 +31,6 @@ git clone https://github.com/galaxatea/metlinkBus.git
 | displayedStops | Number of busses arriving to chosen stop | 5
 | showTimeUntil | Choose to display minutes until arrival time (true / false) | true
 | showClockTime | Choose to display 24hr clock time (true / false) | true
+
+*AI use disclosure*
+Claude was used for the css and minor assistance in bug fixing

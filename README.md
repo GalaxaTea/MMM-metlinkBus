@@ -2,6 +2,9 @@
 
 A small module for MagicMirror to show the bus times for a specified stop within the Wellington, New Zealand region using the metlink api
 
+<img width="612" height="308" alt="image" src="https://github.com/user-attachments/assets/1b57ed3a-4971-431c-bbdc-05208b504a4f" />
+
+
 #### Installation guide
 Clone this repository into you magic mirror modules folder
 ```

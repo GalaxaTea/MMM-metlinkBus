@@ -8,7 +8,9 @@ Module.register("metlinkBus", {
   defaults: {
     stopId: "6000", // Wellington bus interchange
     apiKey: "",
-    displayedStops: "5"
+    displayedStops: "5",
+    showTimeUntill: true,
+    showClockTime: true
   },
 
   start: function () {
@@ -57,13 +59,23 @@ Module.register("metlinkBus", {
 
     this.departures.forEach((dep) => {
       const row = document.createElement("tr");
-      row.innerHTML =
-        "<td>" + dep.route + "</td>" +
-        "<td>" + dep.destination + "</td>" +
-        "<td>" + this.formatTime(dep.expected || dep.aimed) + "</td>" +
-        "<td>" + this.formatClockTime(dep.expected || dep.aimed) + "</td>";
+      const timestamp = dep.expected || dep.aimed;
+
+      const cells = [];
+      cells.push("<td>" + dep.route + "</td>");
+      cells.push("<td>" + dep.destination + "</td>");
+
+      if (this.config.showTimeUntil) {
+        cells.push("<td>" + this.formatTime(timestamp) + "</td>");
+      }
+
+      if (this.config.showClockTime) {
+        cells.push("<td>" + this.formatClockTime(timestamp) + "</td>");
+      }
+
+      row.innerHTML = cells.join("");
       table.appendChild(row);
-    });
+      });
 
     wrapper.appendChild(table);
     return wrapper;

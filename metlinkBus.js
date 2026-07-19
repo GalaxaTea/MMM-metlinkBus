@@ -47,6 +47,10 @@ Module.register("metlinkBus", {
     }
   },
 
+  getStyles: function () {
+    return ["metlinkBus.css"];
+  },
+
   getDom: function () {
     const wrapper = document.createElement("div");
 
@@ -56,26 +60,29 @@ Module.register("metlinkBus", {
     }
 
     const table = document.createElement("table");
+    table.className = "metlinkBus-table";
 
     this.departures.forEach((dep) => {
       const row = document.createElement("tr");
+      row.className = "metlinkBus-row";
       const timestamp = dep.expected || dep.aimed;
 
       const cells = [];
-      cells.push("<td>" + dep.route + "</td>");
-      cells.push("<td>" + dep.destination + "</td>");
+      cells.push("<td class='metlinkBus-dot-cell'><span class='metlinkBus-dot'></span></td>");
+      cells.push("<td class='metlinkBus-route'>" + dep.route + "</td>");
+      cells.push("<td class='metlinkBus-destination'>" + dep.destination + "</td>");
 
       if (this.config.showTimeUntil) {
-        cells.push("<td>" + this.formatTime(timestamp) + "</td>");
+        cells.push("<td class='metlinkBus-time'>" + this.formatTime(timestamp) + "</td>");
       }
 
       if (this.config.showClockTime) {
-        cells.push("<td>" + this.formatClockTime(timestamp) + "</td>");
+        cells.push("<td class='metlinkBus-clock dimmed'>" + this.formatClockTime(timestamp) + "</td>");
       }
 
       row.innerHTML = cells.join("");
       table.appendChild(row);
-      });
+    });
 
     wrapper.appendChild(table);
     return wrapper;

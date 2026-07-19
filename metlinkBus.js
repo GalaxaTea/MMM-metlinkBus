@@ -9,7 +9,7 @@ Module.register("metlinkBus", {
     stopId: "6000", // Wellington bus interchange
     apiKey: "",
     displayedStops: "5",
-    showTimeUntill: true,
+    showTimeUntil: true,
     showClockTime: true
   },
 

@@ -51,6 +51,7 @@ Add this to the `modules` array in `config/config.js`:
 
 ## Development status
 Stable — working end-to-end and in daily use. Not actively seeking a co-maintainer, but bug reports and PRs are welcome via GitHub Issues.
+_Note: This is my first public repo_
 
 ## AI use disclosure
 Claude was used for the CSS and minor assistance in bug fixing.

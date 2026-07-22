@@ -1,8 +1,8 @@
-# metlinkBus
+# MMM-metlinkBus
 
 A [MagicMirror²](https://magicmirror.builders/) module that displays live bus departure times for a chosen stop, using the [Metlink Open Data API](https://opendata.metlink.org.nz/) (Wellington, New Zealand region).
 
-<img width="612" height="308" alt="metlinkBus module showing upcoming bus departures" src="https://github.com/user-attachments/assets/1b57ed3a-4971-431c-bbdc-05208b504a4f" />
+<img width="612" height="308" alt="MMM-metlinkBus module showing upcoming bus departures" src="https://github.com/user-attachments/assets/1b57ed3a-4971-431c-bbdc-05208b504a4f" />
 
 ## Dependencies
 - [Metlink Open Data API](https://opendata.metlink.org.nz/) — requires a free API key from the [Metlink developer portal](https://opendata.metlink.org.nz/). No paid tier or usage cost.
@@ -27,7 +27,7 @@ Add this to the `modules` array in `config/config.js`:
 
 ```js
 {
-  module: "metlinkBus",
+  module: "MMM-metlinkBus",
   position: "top_right",
   config: {
     stopId: "6000",

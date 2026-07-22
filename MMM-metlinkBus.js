@@ -3,7 +3,7 @@
 *   GOAL: Use an api to pull the bus timings for specified bus and display them within
 *         the magic mirror system.
 */
-Module.register("metlinkBus", {
+Module.register("MMM-metlinkBus", {
   // Default configs
   defaults: {
     stopId: "6000", // Wellington bus interchange
@@ -48,7 +48,7 @@ Module.register("metlinkBus", {
   },
 
   getStyles: function () {
-    return ["metlinkBus.css"];
+    return ["MMM-metlinkBus.css"];
   },
 
   getDom: function () {
